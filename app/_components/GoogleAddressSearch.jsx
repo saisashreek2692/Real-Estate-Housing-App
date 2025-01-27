@@ -19,7 +19,7 @@ function GoogleAddressSearch({ selectedAddress, setCoordinates }) {
           onChange: (place) => {
             console.log(place);
             selectedAddress(place);
-            geocodeByAddress(place.label)
+            geocodeByAddress(place?.label)
               .then((result) => getLatLng(result[0]))
               .then(({ lat, lng }) => {
                 setCoordinates({ lat, lng });
